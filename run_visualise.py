@@ -67,12 +67,12 @@ for fidx, fname in enumerate(flist):
 
 	image = cv2.imread(fname)
 
-	for face in faces[fidx]:
-
-		clr = max(min(face['conf']*25,255),0)
-
-		cv2.rectangle(image,(int(face['x']-face['s']),int(face['y']-face['s'])),(int(face['x']+face['s']),int(face['y']+face['s'])),(0,clr,255-clr),3)
-		cv2.putText(image,'Track %d, Conf %.3f'%(face['track'],face['conf']), (int(face['x']-face['s']),int(face['y']-face['s'])),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),2)
+	# for face in faces[fidx]:
+	#
+	# 	clr = max(min(face['conf']*25,255),0)
+	#
+	# 	cv2.rectangle(image,(int(face['x']-face['s']),int(face['y']-face['s'])),(int(face['x']+face['s']),int(face['y']+face['s'])),(0,clr,255-clr),3)
+	# 	cv2.putText(image,'Track %d, Conf %.3f'%(face['track'],face['conf']), (int(face['x']-face['s']),int(face['y']-face['s'])),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),2)
 
 	vOut.write(image)
 
